@@ -132,11 +132,12 @@
 
     Sub krijo_ushqimi()
         With ushqimi
-            .Height = 10
-            .Width = 10
+            .Height = 15
+            .Width = 15
             .Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             .Left = ran.Next(Fusha.Left, Fusha.Right - 10)
             .BackgroundImage = U_BG
+
         End With
         Me.Controls.Add(ushqimi)
         ushqimi.BringToFront()
@@ -144,13 +145,49 @@
     End Sub
 
     Sub KontrolloLojen()
+        For i = 1 To gj
+            If (Gjarperi(0).Bounds.IntersectsWith(Gjarperi(i).Bounds)) Then
+                Timeri.Stop()
+                Dim res = MsgBox("          Loja ka perfunduar!" & vbCrLf & "A deshironi te rifilloni nje loje te Re?", MsgBoxStyle.YesNo, "Humbe!")
+                If res = MsgBoxResult.Yes Then
+                    Application.Restart()
+                Else
+                    Application.Exit()
+                End If
+
+            End If
+
+        Next
         If (Gjarperi(0).Bounds.IntersectsWith(ushqimi.Bounds)) Then
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
             piketTotale = piketTotale + 1
             piket.Text = piketTotale.ToString
             Zgjatim()
+            Timeri.Interval = Timeri.Interval - 1
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Application.Restart()
+        Application.Exit()
+    End Sub
+
+    Private Sub newGame_Click(sender As Object, e As EventArgs) Handles newGame.Click
+        Application.Restart()
+    End Sub
+
+    Private Sub mbylle_Click(sender As Object, e As EventArgs) Handles mbylle.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub NdalNis_Click(sender As Object, e As EventArgs) Handles NdalNis.Click
+        If Timeri.Enabled Then
+            Timeri.Stop()
+            NdalNis.Text = "Vazhdo!"
+        Else
+            Timeri.Start()
+            NdalNis.Text = "Pause!"
+        End If
+    End Sub
 End Class
