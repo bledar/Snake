@@ -162,7 +162,7 @@
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
             piketTotale = piketTotale + 1
-            piket.Text = piketTotale.ToString
+            piket.Text = piketTotale.ToString + "jj"
             Zgjatim()
         End If
     End Sub
