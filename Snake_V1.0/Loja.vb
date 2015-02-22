@@ -11,7 +11,7 @@
 
     Dim U_BG As Drawing.Image = My.Resources.ushqimi
 
-    Dim horiz As Integer = 10
+    Dim horiz As Integer = -10
 
     Dim ran As New Random
 
@@ -33,17 +33,9 @@
         End With
         Me.Controls.Add(Gjarperi(gj))
         Gjarperi(gj).BringToFront()
-        Zgjatim()
-        Zgjatim()
-        Zgjatim()
-        Zgjatim()
-
-
-
     End Sub
 
     Sub Zgjatim()
-
         gj += 1
         Gjarperi(gj) = New PictureBox
         With Gjarperi(gj)
@@ -62,7 +54,7 @@
     End Sub
 
     Private Sub Loja_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-
+        MsgBox("buton")
         Select Case e.KeyCode
             Case Keys.Right
                 If (vert <> 0) Then
@@ -94,9 +86,11 @@
     End Sub
 
     Private Sub Loja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        koka()
+
         Timeri.Start()
+        koka()
         krijo_ushqimi()
+   
     End Sub
 
     Private Sub Timeri_Tick(sender As Object, e As EventArgs) Handles Timeri.Tick
@@ -145,6 +139,7 @@
         Me.Controls.Add(ushqimi)
         ushqimi.BringToFront()
         piket.Text = piketTotale.ToString
+        Timeri.Interval = Timeri.Interval - 1
     End Sub
 
     Sub KontrolloLojen()
@@ -152,20 +147,25 @@
         For i = 1 To gj
             If (Gjarperi(0).Bounds.IntersectsWith(Gjarperi(i).Bounds)) Then
                 Timeri.Stop()
-                dbg.Text = "perplase"
-
+                MsgBox("JU sapo hangert veten ", MsgBoxStyle.Critical)
             Else
-                dbg.Text = "ok" + piketTotale
             End If
         Next
         If (Gjarperi(0).Bounds.IntersectsWith(ushqimi.Bounds)) Then
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
             piketTotale = piketTotale + 1
-            piket.Text = piketTotale.ToString + "jj"
+            piket.Text = piketTotale.ToString
             Zgjatim()
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Application.Restart()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Application.Exit()
+    End Sub
 
 End Class
