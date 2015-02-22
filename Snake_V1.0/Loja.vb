@@ -11,7 +11,7 @@
 
     Dim U_BG As Drawing.Image = My.Resources.ushqimi
 
-    Dim horiz As Integer = -10
+    Dim horiz As Integer = 10
 
     Dim ran As New Random
 
@@ -54,21 +54,20 @@
     End Sub
 
     Private Sub Loja_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        MsgBox("buton")
         Select Case e.KeyCode
             Case Keys.Right
                 If (vert <> 0) Then
                     horiz = 10
                     vert = 0
                 End If
-                
+
                 e.Handled = True
             Case Keys.Left
                 If (vert <> 0) Then
                     horiz = -10
                     vert = 0
                 End If
-                
+
                 e.Handled = True
             Case Keys.Up
                 If (horiz <> 0) Then
@@ -139,18 +138,11 @@
         Me.Controls.Add(ushqimi)
         ushqimi.BringToFront()
         piket.Text = piketTotale.ToString
-        Timeri.Interval = Timeri.Interval - 1
     End Sub
 
     Sub KontrolloLojen()
 
-        For i = 1 To gj
-            If (Gjarperi(0).Bounds.IntersectsWith(Gjarperi(i).Bounds)) Then
-                Timeri.Stop()
-                MsgBox("JU sapo hangert veten ", MsgBoxStyle.Critical)
-            Else
-            End If
-        Next
+        
         If (Gjarperi(0).Bounds.IntersectsWith(ushqimi.Bounds)) Then
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
