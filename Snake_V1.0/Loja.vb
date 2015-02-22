@@ -37,7 +37,7 @@
         Zgjatim()
         Zgjatim()
         Zgjatim()
-        Zgjatim()
+
 
 
     End Sub
@@ -102,13 +102,13 @@
     Private Sub Timeri_Tick(sender As Object, e As EventArgs) Handles Timeri.Tick
         Kontrollo_murin()
         KontrolloLojen()
+
         For i = gj To 1 Step -1
             Gjarperi(i).Top = Gjarperi(i - 1).Top
             Gjarperi(i).Left = Gjarperi(i - 1).Left
         Next
 
         Gjarperi(0).Top += vert
-
         Gjarperi(0).Left += horiz
 
     End Sub
@@ -148,15 +148,24 @@
     End Sub
 
     Sub KontrolloLojen()
+
+        For i = 1 To gj
+            If (Gjarperi(0).Bounds.IntersectsWith(Gjarperi(i).Bounds)) Then
+                Timeri.Stop()
+                dbg.Text = "perplase"
+
+            Else
+                dbg.Text = "ok" + piketTotale
+            End If
+        Next
         If (Gjarperi(0).Bounds.IntersectsWith(ushqimi.Bounds)) Then
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
             piketTotale = piketTotale + 1
             piket.Text = piketTotale.ToString
+            Zgjatim()
         End If
-
-
-
     End Sub
+
 
 End Class

@@ -27,8 +27,9 @@ Partial Class Loja
         Me.Fusha = New System.Windows.Forms.PictureBox()
         Me.Timeri = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.piket = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dbg = New System.Windows.Forms.Label()
         CType(Me.Fusha, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -51,12 +52,25 @@ Partial Class Loja
         Me.Panel1.BackColor = System.Drawing.SystemColors.WindowFrame
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.dbg)
         Me.Panel1.Controls.Add(Me.piket)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(439, 13)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(203, 436)
         Me.Panel1.TabIndex = 2
+        '
+        'piket
+        '
+        Me.piket.AutoSize = True
+        Me.piket.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.piket.Font = New System.Drawing.Font("Lucida Console", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.piket.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.piket.Location = New System.Drawing.Point(130, 70)
+        Me.piket.Name = "piket"
+        Me.piket.Size = New System.Drawing.Size(29, 27)
+        Me.piket.TabIndex = 1
+        Me.piket.Text = "0"
         '
         'Label1
         '
@@ -70,17 +84,14 @@ Partial Class Loja
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Piket:"
         '
-        'piket
+        'dbg
         '
-        Me.piket.AutoSize = True
-        Me.piket.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.piket.Font = New System.Drawing.Font("Lucida Console", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.piket.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.piket.Location = New System.Drawing.Point(130, 70)
-        Me.piket.Name = "piket"
-        Me.piket.Size = New System.Drawing.Size(29, 27)
-        Me.piket.TabIndex = 1
-        Me.piket.Text = "0"
+        Me.dbg.AutoSize = True
+        Me.dbg.Location = New System.Drawing.Point(3, 411)
+        Me.dbg.Name = "dbg"
+        Me.dbg.Size = New System.Drawing.Size(13, 13)
+        Me.dbg.TabIndex = 2
+        Me.dbg.Text = "1"
         '
         'Loja
         '
@@ -103,5 +114,6 @@ Partial Class Loja
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents piket As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents dbg As System.Windows.Forms.Label
 
 End Class
