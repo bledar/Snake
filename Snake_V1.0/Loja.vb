@@ -13,9 +13,9 @@
 
     Dim horiz As Integer = 10
 
-    Dim ran As New Random
-
     Dim vert As Integer = 0
+
+    Dim ran As New Random
 
     Dim piketTotale As Integer = 0
 
@@ -54,6 +54,7 @@
     End Sub
 
     Private Sub Loja_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
         Select Case e.KeyCode
             Case Keys.Right
                 If (vert <> 0) Then
@@ -88,7 +89,9 @@
 
         Timeri.Start()
         koka()
+        Zgjatim()
         krijo_ushqimi()
+        KontrolloLojen()
    
     End Sub
 
@@ -141,8 +144,6 @@
     End Sub
 
     Sub KontrolloLojen()
-
-        
         If (Gjarperi(0).Bounds.IntersectsWith(ushqimi.Bounds)) Then
             ushqimi.Top = ran.Next(Fusha.Top, Fusha.Bottom - 10)
             ushqimi.Left = ran.Next(Fusha.Left, Fusha.Right - 10)
@@ -150,14 +151,6 @@
             piket.Text = piketTotale.ToString
             Zgjatim()
         End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Application.Restart()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Application.Exit()
     End Sub
 
 End Class

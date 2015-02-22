@@ -27,11 +27,11 @@ Partial Class Loja
         Me.Fusha = New System.Windows.Forms.PictureBox()
         Me.Timeri = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.dbg = New System.Windows.Forms.Label()
         Me.piket = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.Fusha, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,6 +63,28 @@ Partial Class Loja
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(203, 436)
         Me.Panel1.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Button2.Location = New System.Drawing.Point(27, 332)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(132, 40)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Mbyll Lojen!"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Green
+        Me.Button1.Location = New System.Drawing.Point(27, 267)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 40)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Loje e Re !"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'dbg
         '
@@ -96,28 +118,6 @@ Partial Class Loja
         Me.Label1.Size = New System.Drawing.Size(114, 27)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Piket:"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Green
-        Me.Button1.Location = New System.Drawing.Point(27, 267)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 40)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Loje e Re !"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Button2.Location = New System.Drawing.Point(27, 332)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(132, 40)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Mbyll Lojen!"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Loja
         '
